@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starbucks Landing Page</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <section>
+        <div class="circle"></div>
+        <header>
+            <a href="#"><img src="images/logo.png" class="logo"></a>
+            <ul class="menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">Responsabiltà</a></li>
+                <li><a href="#">Su di noi</a></li>
+            </ul>
+
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+            </div>
+        </header>
+        <div class="content">
+            <div class="content__text">
+                <h2>Non un semplice Caffe<br>Prova il caffe di<span>Starbucks</span></h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque, earum ab. Dolor, repellat laborum
+                    officia, dolore sint hic officiis quasi placeat corporis fugiat, eveniet molestiae iste totam magni
+                    nobis nam!</p>
+                <a href="#">Scopri di più</a>
+            </div>
+            <div class="content__img">
+                <img src="images/img1.png" class="starbucks">
+            </div>
+        </div>
+        <ul class="thumb">
+            <li><img src="images/thumb1.png" onclick="imgSlider('images/img1.png');changeCircleColor('#0171425e')"></li>
+            <li><img src="images/thumb2.png" onclick="imgSlider('images/img2.png');changeCircleColor('#eb7495')"></li>
+            <li><img src="images/thumb3.png" onclick="imgSlider('images/img3.png');changeCircleColor('#d752b1')"></li>
+        </ul>
+        <ul class="social">
+            <li><a href="#"><img src="images/facebook.png"></a></li>
+            <li><a href="#"><img src="images/twitter.png"></a></li>
+            <li><a href="#"><img src="images/instagram.png"></a></li>
+        </ul>
+    </section>
+
+    <script type="text/javascript">
+        let hamburger = document.querySelector(".hamburger");
+        hamburger.addEventListener("click", function () {
+            document.body.classList.toggle("menu-open");
+        });
+
+
+        function imgSlider(UrlImg) {
+            document.querySelector('.starbucks').src = UrlImg
+        }
+
+        function changeCircleColor(color) {
+            const circle = document.querySelector('.circle');
+            circle.style.background = color;
+        }
+    </script>
+
+</body>
+
+</html>
